@@ -1,0 +1,36 @@
+{%extends 'base.html' %}
+{%block title%}Order Creation{%endblock%}
+
+
+{%block content%}
+<div class="shadow-md p-4">
+    <h2 class="text-indigo-600 text-2xl font-semibold text-center mb-4">Checkout</h2>
+    <form method="POST">
+        {%csrf_token%}
+        {{form.as_p}}
+        <div class="flex justify-center ">
+        <button class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 m-4" type="submit">Place Order</button>
+        </div>
+    </form>
+</div>
+<style>
+    form {
+  max-width: 400px;
+  margin: auto;
+}
+form p{
+    margin-bottom:1rem;
+}
+ ul.errorlist {
+      display:none; 
+ }
+ form input{
+     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* subtle shadow */
+    border: 1px solid #ccc; /* optional border */
+    padding: 5px;
+    border-radius: 4px;
+    width:100%;
+ }
+</style>
+
+{%endblock%}
