@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment Result</title>
+</head>
+<body>
+    <h1>{{ message }}</h1>
+
+    {% if order %}
+        <p>Order number: {{ order.id }}</p>
+
+        {% if order.paid %}
+            <p>Payment status: Paid</p>
+        {% else %}
+            <p>Payment status: Pending confirmation</p>
+        {% endif %}
+    {% endif %}
+
+    <a href="/">Return to home</a>
+</body>
+</html>

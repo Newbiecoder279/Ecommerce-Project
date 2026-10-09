@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Redirecting to eSewa</title>
+</head>
+<body>
+    <h2>Redirecting you to eSewa...</h2>
+    <p>Please wait while we connect you to the payment gateway.</p>
+
+    <form id="esewa-form" method="POST" action="{{ payment_url }}">
+        {% for key, value in form_data.items %}
+            <input type="hidden" name="{{ key }}" value="{{ value }}">
+        {% endfor %}
+
+        <button type="submit">Continue to eSewa</button>
+    </form>
+
+    <script>
+        document.getElementById("esewa-form").submit();
+    </script>
+</body>
+</html>

@@ -128,3 +128,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR/'mediafiles'
 STATIC_ROOT = BASE_DIR/'staticfiles'
+
+
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+ESEWA_PRODUCT_CODE = os.getenv("ESEWA_PRODUCT_CODE")
+ESEWA_SECRET_KEY = os.getenv("ESEWA_SECRET_KEY")
+ESEWA_PAYMENT_URL = os.getenv("ESEWA_PAYMENT_URL")
+ESEWA_STATUS_URL = os.getenv("ESEWA_STATUS_URL")
